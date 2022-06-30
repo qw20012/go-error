@@ -23,7 +23,8 @@ func devideByZero(dividend int, divisor int) (int, error) {
 
 ### Wrap third pary error and relative context information.
 
-`func callThirdParty(id int, value int) (int, error) {
+```
+func callThirdParty(id int, value int) (int, error) {
 	r, e := thirdPartyMethod(id, value)
 	if e != nil {
 		params := make(map[string]any)
@@ -32,10 +33,11 @@ func devideByZero(dividend int, divisor int) (int, error) {
 		err.New("ThirdParty.BadArgument", e, params)
 	}
 	return r, nil
-}`
+}
+```
 
 ### Wrap trace and relative context information.
-
+```
 func callDevideByZero(dividend int, divisor int) (int, error) {
 	r, e := devideByZero(dividend, divisor)
 	if e != nil {
@@ -45,9 +47,9 @@ func callDevideByZero(dividend int, divisor int) (int, error) {
 	}
 	return r, nil
 }
-
+```
 ### Check error kind and handle it.
-
+```
 func callAndHandleError() {
 	_, e := callDevideByZero(2, 0)
 	if e != nil {
@@ -57,7 +59,7 @@ func callAndHandleError() {
 		}
 	}
 }
-
+```
 ## Contributing
 
 PRs accepted.
