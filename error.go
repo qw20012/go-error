@@ -30,14 +30,15 @@ func (e *BqError) Error() string {
 
 // New BqError pointer with given id and message.
 // Parameter cause and parameters are optional.
-func New(id string, message string, params ...any) *BqError {
+func New(id string, params ...any) *BqError {
 	err := &BqError{
-		id:      id,
-		message: message,
+		id: id,
 	}
 
 	for _, param := range params {
 		switch param := param.(type) {
+		case string:
+			err.message = param
 		case error:
 			err.cause = param
 		case map[string]any:
