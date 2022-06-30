@@ -12,16 +12,16 @@ This package can help define custom error and handle the error gracefully.
 
 ### Define custom error.
 
-func devideByZero(dividend int, divisor int) (int, error) {
+`func devideByZero(dividend int, divisor int) (int, error) {
 	if divisor == 0 {
 		return 0, err.New("Business.DevideByZero", "Given parameter divisor is zero in method devideByZero.")
 	}
 	return dividend / divisor, nil
-}
+}`
 
 ### Wrap third pary error and relative context information.
 
-func callThirdParty(id int, value int) (int, error) {
+`func callThirdParty(id int, value int) (int, error) {
 	r, e := thirdPartyMethod(id, value)
 	if e != nil {
 		params := make(map[string]any)
@@ -30,7 +30,7 @@ func callThirdParty(id int, value int) (int, error) {
 		err.New("ThirdParty.BadArgument", e, params)
 	}
 	return r, nil
-}
+}`
 
 ### Wrap trace and relative context information.
 
