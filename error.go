@@ -55,12 +55,6 @@ func (e *BqError) Wrap(prefix string) *BqError {
 	return e
 }
 
-// Set cause in build pattern.
-func (e *BqError) WithCause(cause error) *BqError {
-	e.cause = cause
-	return e
-}
-
 // Set parameter in build pattern.
 func (e *BqError) WithParameter(name string, value any) *BqError {
 	e.parameters = basic.NewIfEmpty(e.parameters)

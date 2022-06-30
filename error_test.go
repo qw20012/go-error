@@ -37,15 +37,6 @@ func TestWrap(t *testing.T) {
 	}
 }
 
-func TestWithCause(t *testing.T) {
-	err1 := errors.New("Nested error")
-	bqError := create(t)
-	bqError.WithCause(err1)
-	if bqError.Cause() != err1 {
-		t.Fatal("TestWithCause failed")
-	}
-}
-
 func WithParameter(t *testing.T) {
 	bqError := create(t)
 	bqError.Wrap("Wrap {p}")
