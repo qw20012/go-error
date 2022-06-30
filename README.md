@@ -12,12 +12,14 @@ This package can help define custom error and handle the error gracefully.
 
 ### Define custom error.
 
-`func devideByZero(dividend int, divisor int) (int, error) {
+```
+func devideByZero(dividend int, divisor int) (int, error) {
 	if divisor == 0 {
 		return 0, err.New("Business.DevideByZero", "Given parameter divisor is zero in method devideByZero.")
 	}
 	return dividend / divisor, nil
-}`
+}
+```
 
 ### Wrap third pary error and relative context information.
 
