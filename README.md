@@ -42,7 +42,7 @@ func callDevideByZero(dividend int, divisor int) (int, error) {
 	r, e := devideByZero(dividend, divisor)
 	if e != nil {
 		return 0, e.(*err.BqError).Wrap("Method callDevideByZero({dividend}, {divisor})").
-		   WithParameter("dividend", dividend).WithParameter("divisor", divisor)
+		              WithParameter("dividend", dividend).WithParameter("divisor", divisor)
 		 
 	}
 	return r, nil
