@@ -8,6 +8,11 @@ This package can help define custom error and handle the error gracefully.
 - Wrap additional trace information.
 - Print statck trace message.
 
+## Install
+```
+go get github.com/qw20012/go-error
+```
+
 ## Usage
 
 ### Define custom error.
